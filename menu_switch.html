@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            display: none;
+        }
+
+        nav.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- a#btn-nav-toggle.icon-menu[href="javascript:;] javascript:;(javascript:void(0)) -->
+    <a href="javascript:;" id="btn-nav-toggle" class="icon-menu">menu</a>
+
+    <!-- nav#primary_navigation>ul>li*4>a{item$$} -->
+    <nav id="primary-navigation">
+        <ul>
+            <li><a href="">item01</a></li>
+            <li><a href="">item02</a></li>
+            <li><a href="">item03</a></li>
+            <li><a href="">item04</a></li>
+        </ul>
+    </nav>
+
+    <!-- 等到html都讀完才執行 -->
+    <script>
+        document.getElementById('btn-nav-toggle').addEventListener('click', openNav)
+        // 函式名稱
+        function openNav() {
+            console.log('點按鈕打開主導覽')
+            if (document.getElementById('primary-navigation').classList.contains('active') == true) {
+                // 假如主導覽有active類別時執行
+                document.getElementById('primary-navigation').classList.remove('active')
+                document.getElementById('btn-nav-toggle').textContent = 'menu'
+            } else {
+
+                // 假如主導覽沒有active類別時執行
+                document.getElementById('primary-navigation').classList.add('active')
+                document.getElementById('btn-nav-toggle').textContent = 'X'
+
+            }// openNav if end
+
+        } //openNav end
+    </script>
+
+
+</body>
+
+</html>
